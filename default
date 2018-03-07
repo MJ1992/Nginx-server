@@ -1,0 +1,33 @@
+# server configuration
+
+server {
+	listen 80 default_server;
+
+#index.html file path
+
+	root /home/manish/Desktop/GOTapp/GameOfThronesApp;
+
+	index index.html; 	
+
+	server_name localhost;
+
+#for error 404
+
+	error_page 404 /custom_404.html;
+
+	location = /custom_404.html {
+	
+		root /home/manish/Desktop/GOTapp/GameOfThronesApp/error_pages;
+		index custom_404.html;
+	}
+#for error 500	
+
+	error_page 500  /custom_500.html;
+        
+	location = /custom_500.html {
+
+                root /home/manish/Desktop/GOTapp/GameOfThronesApp/error_pages;
+                index custom_50x.html;
+        }
+
+}
